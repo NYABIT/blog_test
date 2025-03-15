@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>간단한 터치 게임</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        .game-screen {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: lightblue;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="screen" class="game-screen" onclick="nextScreen()">첫 번째 화면</div>
+
+    <script>
+        let screenIndex = 0;
+        const messages = ["두 번째 화면", "세 번째 화면", "게임 종료!"];
+
+        function nextScreen() {
+            screenIndex++;
+            if (screenIndex < messages.length) {
+                document.getElementById("screen").innerText = messages[screenIndex];
+            } else {
+                document.getElementById("screen").innerText = "다시 시작하려면 새로고침하세요!";
+            }
+        }
+    </script>
+</body>
+</html>
